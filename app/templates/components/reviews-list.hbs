@@ -1,0 +1,4 @@
+{{#each sortedReviewsByRating as |review|}}
+  {{review-tile review=review}}
+  {{update-review updateReview="updateReview" review=review}}
+{{/each}}

@@ -1,0 +1,32 @@
+{{#if updateBookForm}}
+  <div class="update-book">
+    <form class="form-group">
+      <h2>Update Book</h2>
+      <div class="row">
+        <div class="col-xs-6">
+          <label>Title</label>
+          {{input required value=book.title id="title" class="form-control"}}
+        </div>
+        <div class="col-xs-6">
+          <label>Author</label>
+          {{input required value=book.author id="author" class="form-control"}}
+        </div>
+      </div>
+      <div>
+        <label>Tag Line</label>
+        {{input required value=book.tagLine id="tagLine" class="form-control"}}
+      </div>
+      <div>
+        <label>Description</label>
+        {{textarea required value=book.description id="description" class="form-control"}}
+      </div>
+      <div>
+        <label>Image URL</label>
+        {{input required value=book.image id="image" class="form-control"}}
+      </div>
+      <button {{action "updateBook" book}} class="btn btn-success">Save</button>
+    </form>
+  </div>
+{{else}}
+  <button {{action "showUpdateBookForm"}} class="btn btn-warning">Update Book</button>
+{{/if}}

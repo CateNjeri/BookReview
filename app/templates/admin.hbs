@@ -1,0 +1,24 @@
+<h1 class="page-header">Administrator</h1>
+
+{{new-book saveNewBook="saveNewBook"}}
+
+<div class="admin-books-list">
+  <h2>Books List</h2>
+  {{#each model.books as |book|}}
+    <div class="admin-each-book">
+      <h4>{{book.title}} By {{book.author}}</h4>
+      {{update-book book=book deleteBook="deleteBook"}}
+      <button {{action "deleteBook" book}} class="btn btn-danger">Delete</button>
+    </div>
+  {{/each}}
+</div>
+
+<div class="admin-reviews-list">
+  <h2>Reviews List</h2>
+  {{#each model.reviews as |review|}}
+    <div class="admin-each-review">
+      <h4>{{review.username}}: {{review.reviewContent}}</h4>
+      <button {{action "deleteReview" review}} class="btn btn-danger">Delete</button>
+    </div>
+  {{/each}}
+</div>

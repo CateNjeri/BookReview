@@ -1,0 +1,11 @@
+<div class="book-tile">
+  <div class="row">
+    {{#link-to "book" book.id}}<img src={{book.image}} alt={{book.title}} class="col-xs-6"/>{{/link-to}}
+    <div class="col-xs-6">
+      <h2>{{book.title}}</h2>
+      <h3>By {{book.author}}</h3>
+      <h4>{{book.tagLine}}</h4>
+      <button {{action "addBookToFavorites" book}} class="btn btn-info">Add to Favorites</button>
+    </div>
+  </div>
+</div>
